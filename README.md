@@ -39,3 +39,14 @@ should result in this on the containers output:
 iso.3.6.1.2.1.1.3.0 = Timeticks: (2560809) 7:06:48.09   iso.3.6.1.6.3.1.1.4.1.0 = OID: iso.3.6.1.4.1.8072.2.3.0.1       iso.3.6.1.4.1.8072.2.3.2.1 = INTEGER: 123456
 ```
 
+## ntpd
+
+Build with:
+```bash
+docker build -t containerized-services/ntpd ntpd/
+```
+
+Run with:
+```bash
+docker run --rm -p 123:123/udp containerized-services/ntpd
+```
