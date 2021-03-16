@@ -1,5 +1,5 @@
 # containerized-services
-A collection of Dockerfile's for hosting containerized services intended for testing a primary applications integration with them
+A collection of Dockerfile's for running containerized services intended for testing a primary applications integration with them.
 
 ## Rsyslog
 
@@ -49,4 +49,16 @@ docker build -t containerized-services/ntpd ntpd/
 Run with:
 ```bash
 docker run --rm -p 123:123/udp containerized-services/ntpd
+```
+
+## tac_plus
+
+Build with:
+```bash
+docker build -t containerized-services/tac_plus tac_plus/
+```
+
+Run with:
+```bash
+docker run --rm -p 49:49 -v $(realpath tac_plus/tac_plus.conf):/etc/tacacs+/tac_plus.conf containerized-services/tac_plus
 ```
